@@ -32,56 +32,47 @@ public class MainGUI extends javax.swing.JFrame {
     private void initComponents() {
 
         blockOverride1 = new BlockOverride();
-        jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        button_Disable = new javax.swing.JButton();
+        label_CurrentStatus = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
+        menuItem_Blocklists = new javax.swing.JMenuItem();
+        menuItem_Settings = new javax.swing.JMenuItem();
+        menuItem_Statistics = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        button_Disable.setText("Disable DoHomework");
+        button_Disable.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                button_DisableActionPerformed(evt);
             }
         });
+
+        label_CurrentStatus.setText("Current Status: ");
 
         jMenu1.setText("File");
 
-        jMenuItem1.setText("Settings");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItem1);
+        menuItem_Blocklists.setText("Blocklists");
+        jMenu1.add(menuItem_Blocklists);
 
-        jMenuItem2.setText("Statistics");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        menuItem_Settings.setText("Settings");
+        menuItem_Settings.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                menuItem_SettingsActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem2);
+        jMenu1.add(menuItem_Settings);
+
+        menuItem_Statistics.setText("Statistics");
+        menuItem_Statistics.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItem_StatisticsActionPerformed(evt);
+            }
+        });
+        jMenu1.add(menuItem_Statistics);
 
         jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
 
@@ -90,22 +81,28 @@ public class MainGUI extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(292, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(35, 35, 35))
+                .addContainerGap(237, Short.MAX_VALUE)
+                .addComponent(button_Disable)
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(63, 63, 63)
+                .addComponent(label_CurrentStatus)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(200, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(55, 55, 55))
+                .addGap(45, 45, 45)
+                .addComponent(label_CurrentStatus)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 188, Short.MAX_VALUE)
+                .addComponent(button_Disable)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void button_DisableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_DisableActionPerformed
         boolean passedTest = JOptionPane.showConfirmDialog(this, blockOverride1, "DoHomework Override", OK_CANCEL_OPTION) == OK_OPTION && blockOverride1.getText().equals(blockOverride1.getType());
         if (passedTest) {
             JOptionPane.showMessageDialog(this, "You did it!");
@@ -113,15 +110,15 @@ public class MainGUI extends javax.swing.JFrame {
         else {
             JOptionPane.showMessageDialog(this, "String was not typed correctly. DoHomework will continue to run.");
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_button_DisableActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void menuItem_SettingsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItem_SettingsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_menuItem_SettingsActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void menuItem_StatisticsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItem_StatisticsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_menuItem_StatisticsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -161,12 +158,12 @@ public class MainGUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private BlockOverride blockOverride1;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton button_Disable;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel label_CurrentStatus;
+    private javax.swing.JMenuItem menuItem_Blocklists;
+    private javax.swing.JMenuItem menuItem_Settings;
+    private javax.swing.JMenuItem menuItem_Statistics;
     // End of variables declaration//GEN-END:variables
 }
