@@ -24,7 +24,7 @@ import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-public class Quickstart {
+public class GoogleCalendar {
 
     private static final String APPLICATION_NAME
             = "Google Calendar API Java Quickstart";
@@ -55,7 +55,7 @@ public class Quickstart {
     public static Credential authorize() throws IOException {
         // Load the secret boi
         InputStream in
-                = Quickstart.class.getResourceAsStream("/client_secret.json");
+                = GoogleCalendar.class.getResourceAsStream("/client_secret.json");
         GoogleClientSecrets clientSecrets
                 = GoogleClientSecrets.load(JSON_FACTORY, new InputStreamReader(in));
 

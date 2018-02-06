@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dohomework;
+
 
 import java.io.InputStreamReader;
 import java.util.ArrayList;
